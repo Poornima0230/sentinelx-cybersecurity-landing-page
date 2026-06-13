@@ -1,0 +1,169 @@
+/* ===== HEADER ===== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  backdrop-filter: blur(16px);
+  background: rgba(5, 8, 22, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===== LOGO ===== */
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+
+  background: linear-gradient(135deg, #00e5ff, #7b61ff);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== NAVIGATION ===== */
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  list-style: none;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #d1d5db;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #00e5ff;
+}
+
+/* ===== CTA BUTTON ===== */
+
+.btn-contact {
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #00e5ff, #7b61ff);
+
+  color: white !important;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 20px rgba(0, 229, 255, 0.4),
+    0 0 40px rgba(123, 97, 255, 0.3);
+}
+
+/* ===== MENU ICON ===== */
+
+.menu-icon {
+  display: none;
+
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ===== DESKTOP ===== */
+
+.menu-web {
+  display: flex;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 900px) {
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-web {
+    display: none;
+  }
+
+  .menu-mobile {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+
+    width: 280px;
+
+    background: rgba(11, 18, 36, 0.95);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    padding: 1.5rem;
+
+    animation: slideIn 0.3s ease;
+  }
+
+  .menu-mobile .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .menu-mobile .nav-list li {
+    width: 100%;
+  }
+
+  .menu-mobile .nav-list a {
+    display: block;
+    width: 100%;
+  }
+
+  .menu-mobile .btn-contact {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
